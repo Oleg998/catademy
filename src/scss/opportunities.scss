@@ -18,6 +18,8 @@
   padding: 138px 22px 50px 21px;
   border-radius: 24px;
   transform: skewY(5deg);
+  zoom: normal;
+  transition: zoom 4s ease-in-out 1s;
 }
 .opportunity:nth-child(1) {
   background: $purple_gradient;
@@ -28,6 +30,9 @@
 }
 .opportunity:nth-child(3) {
   background: $purple_gradient;
+}
+.opportunity:hover {
+zoom: 115%;
 }
 .opportunity__title {
   text-align: center;
