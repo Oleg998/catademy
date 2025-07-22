@@ -13,21 +13,20 @@
   gap: 140px;
 }
 .opportunity {
-  width: 312px;
+  max-width:312px;
+  background: $purple_gradient;
   position: relative;
   padding: 138px 22px 50px 21px;
   border-radius: 24px;
-  transform: skewY(5deg);
-  zoom: normal;
-  background: $purple_gradient;
-  transition: background 4s ease-in-out;
-   transition: zoom 4s ease-in-out;
-   cursor: pointer;
+  transform: skewY(5deg) scale(1);
+  transition: background 4s ease-in-out, transform 4s ease-in-out;
+
+  cursor: pointer;
 }
 
 .opportunity:hover {
-   background: $orange_gradient;
-   zoom: 115%;
+  background: $orange_gradient;
+  transform: skewY(5deg) scale(1.05);
 }
 .opportunity__title {
   text-align: center;
@@ -78,7 +77,6 @@
     transform: none;
     bottom: 15px;
     width: 250px;
- 
   }
   .opportunity__card-container .opportunity:nth-child(3) .opportunity__image {
     width: 230px;
@@ -107,42 +105,43 @@
     margin-bottom: 49px;
     width: 600px;
   }
-  .opportunity__card-container{
+  .opportunity__card-container {
     gap: 40px;
   }
 }
-@include media(desktop){
-    .opportunity-container.container {
-        padding-top: 109px;
-        padding-bottom: 109px;
-      }
-      .opportunity {
-        width: 341px;
-      }
-      .opportunity__card-container{
-        flex-direction: row;
-        gap: 15px;
-      }
-      .opportunities__subtitle {
-        width: 744px;
-        margin-bottom: 136px;
-      }
-      .opportunity__image {
-        left: 50%;
-        transform: translate(-50%);
-        bottom: 236px;
-        width: 320px;
-        height: 320px;
-     
-      }
-      .opportunity__card-container .opportunity:nth-child(3) .opportunity__image {
-        width: 289px;
-        height: auto;
-      }
-      .opportunity__text {width: 300px;}
-      
-      .opportunity{
-        padding: 205px 22px 77px 22px;
-        justify-content: space-between;
-      }
+@include media(desktop) {
+  .opportunity-container.container {
+    padding-top: 109px;
+    padding-bottom: 109px;
+  }
+  .opportunity {
+    width: 341px;
+  }
+  .opportunity__card-container {
+    flex-direction: row;
+    gap: 15px;
+  }
+  .opportunities__subtitle {
+    width: 744px;
+    margin-bottom: 136px;
+  }
+  .opportunity__image {
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 236px;
+    width: 320px;
+    height: 320px;
+  }
+  .opportunity__card-container .opportunity:nth-child(3) .opportunity__image {
+    width: 289px;
+    height: auto;
+  }
+  .opportunity__text {
+    width: 300px;
+  }
+
+  .opportunity {
+    padding: 205px 22px 77px 22px;
+    justify-content: space-between;
+  }
 }
