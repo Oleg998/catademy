@@ -1,0 +1,228 @@
+@use "common/vars" as *;
+@use "common/mixins" as *;
+
+.intro_container.container {
+  margin-top: 96px;
+  padding-bottom: 51px;
+}
+.intro__image {
+  position: absolute;
+  width: 213px;
+  height: 262px;
+  z-index: 20;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.intro__image picture {
+  width: 100%;
+  height: 100%;
+}
+.intro__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 310px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $purple_gradient;
+  border-radius: 25px;
+  padding: 74px 20px 12px 20px;
+  width: 312px;
+}
+.intro__title {
+  font-size: 30px;
+  text-align: center;
+}
+.intro__subtitle-image {
+  display: none;
+  width: 70px;
+  height: 70px;
+}
+.intro__subtitle-text {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 120%;
+  width: 233px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.intro__button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  width: 267px;
+  height: 40px;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+}
+
+.intro__button-container button:first-child {
+  color: $main_white;
+  background-color: $main_orange;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.intro__button-container button:first-child:focus,
+.intro__button-container button:first-child:hover {
+  background-color: rgba(255, 93, 0, 1);
+}
+.intro__button-container button:last-child {
+  border: 2px solid $main_orange;
+  color: $main_orange;
+  background: transparent;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+.intro__button-container button:last-child:hover,
+.intro__button-container button:last-child:focus {
+  color: $main_white;
+  border: 2px solid $main_white;
+}
+.intro__button-icon:before {
+  content: "\e902";
+  font-family: "icomoon";
+  font-size: 20px;
+  padding-right: 15px;
+  transition: color 0.3s ease;
+  will-change: transform;
+}
+
+@mixin intro-tablet-desktop {
+  .intro_container.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .intro__image {
+    position: static;
+    order: 2;
+    transform: none;
+  }
+
+  .intro__content {
+    position: static;
+    transform: none;
+    margin-top: 0;
+  }
+
+  .intro__subtitle {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 31px;
+  }
+
+  .intro__subtitle-image {
+    display: block;
+  }
+
+  .intro__title {
+    text-align: left;
+  }
+
+  .intro__button-container {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .intro__button-container button:last-child {
+    padding: 10px 12px;
+    white-space: nowrap;
+  }
+}
+
+@include media(tablet) {
+  @include intro-tablet-desktop;
+
+  .intro_container.container {
+    margin-top: 166px;
+    padding-bottom: 58px;
+  }
+
+  .intro__image {
+    width: 257px;
+    height: 315px;
+  }
+
+  .intro__content {
+    padding: 37px 30px;
+    width: 401px;
+  }
+
+  .intro__title {
+    font-size: 36px;
+  }
+
+  .intro__button {
+    width: 150px;
+  }
+
+  .intro__button-icon:before {
+    padding-right: 10px;
+  }
+}
+
+@include media(desktop) {
+  @include intro-tablet-desktop;
+
+  .intro_container.container {
+    margin-top: 237px;
+    padding-bottom: 92px;
+  }
+
+  .intro__image {
+    width: 400px;
+    height: 490px;
+  }
+
+  .intro__content {
+    padding: 50px;
+    width: 625px;
+  }
+
+  .intro__title {
+    font-size: 70px;
+    margin-bottom: 15px;
+  }
+  .intro__subtitle {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .intro__subtitle-text {
+    font-size: 24px;
+    width: 382px;
+  }
+
+  .intro__subtitle-imag {
+    width: 80px;
+    height: 80px;
+  }
+
+  .intro__button {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .intro__button-icon:before {
+    padding-right: 6px;
+    font-size: 36px;
+  }
+}

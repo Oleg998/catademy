@@ -1,0 +1,116 @@
+@use "common/vars" as *;
+@use "common/mixins" as *;
+
+.footer {
+    position: relative;
+    
+}
+.footer__socials::before{
+    content: "";
+    border-radius: 4px;
+    width: 311px;
+     height: 4px;
+    background-color: $main_orange;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%);
+}
+.footer__links {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+    padding-bottom: 54px;
+}
+.footer__link{
+ 
+    color: $main_white;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    transition: color 0.3s ease;
+
+}
+.footer__link:hover ,
+.footer__link:focus {
+    color: $main_orange;
+}
+
+.footer__socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+   
+
+}
+.social__link {
+    color: $main_white;
+    font-family: "icomoon";
+    font-size: 35px;
+    transition: color 0.3s ease;
+
+}
+.social__link:nth-child(1)::after{
+    position: relative;
+    top: 40px;
+    content: "\e909";
+   
+}
+.social__link:nth-child(2)::after{
+    position: relative;
+    top: 40px;
+    content: "\e908";
+    
+}
+.social__link:nth-child(3)::after{
+    position: relative;
+    top: 40px;
+    content: "\e907"; 
+}
+
+.social__link:focus,
+.social__link:hover{
+    color: $main_orange;
+}
+
+@include media(tablet){
+    .footer__links {
+        margin-top: 62px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 45px;
+    }
+    .footer__socials::before{
+        width: 768px;
+    }
+}
+@include media(desktop){
+   .footer__links{justify-content: flex-end;} 
+   .footer__socials{
+    justify-content: flex-start;
+    gap: 50px;
+}
+.social__link:nth-child(1)::after{
+    position: relative;
+    top: 82px;
+    content: "\e909";
+   
+}
+.social__link:nth-child(2)::after{
+    position: relative;
+    top: 82px;
+    content: "\e908";
+    
+}
+.social__link:nth-child(3)::after{
+    position: relative;
+    top: 82px;
+    content: "\e907"; 
+}
+.footer__socials::before{
+    width: 1064px;
+}
+}

@@ -1,0 +1,225 @@
+@use "common/vars" as *;
+@use "common/mixins" as *;
+
+.info_container {
+  background: $purple_gradient;
+  border-radius: 25px;
+  width: 312px;
+  padding: 33px 26px 23px 22px;
+  position: relative;
+}
+
+.stat__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+.stat__item-title {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+.stat__item-value {
+  font-size: 24px;
+}
+.stat__item-icon {
+  font-family: "icomoon";
+  font-size: 24px;
+  order: -1;
+}
+.stat__item-icon--students::after {
+  content: "\e903";
+}
+
+.stat__item-icon--lessons::before {
+  content: "\e906";
+}
+
+.stat__item-icon--likes::before {
+  content: "\e904";
+  
+}
+.info_stats {
+  margin-bottom: 74px;
+}
+.info_stats::after {
+  content: "";
+  border-radius: 4px;
+  width: 4px;
+  height: 285px;
+  background-color: $main_white;
+  position: absolute;
+  left: 50%;
+  top: 26px;
+  rotate: 90deg;
+  transform: translate(-50%);
+}
+.comment__info {
+  width: 203px;
+}
+.comment__info-title {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+.comment__info-text {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+}
+.comment__image {
+  width: 50px;
+  height: 50px;
+  background: $orange_gradient;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+.comment {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  align-items: center;
+  gap: 14px;
+}
+
+.comment-slider__dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 27px;
+  background-color: $main_white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input#comment1:checked ~ .comment-slider__track {
+  transform: translateX(0%);
+}
+input#comment2:checked ~ .comment-slider__track {
+  transform: translateX(-100%);
+}
+input#comment3:checked ~ .comment-slider__track {
+  transform: translateX(-200%);
+}
+
+input#comment1:checked ~ .comment-slider__dots label[for="comment1"],
+input#comment2:checked ~ .comment-slider__dots label[for="comment2"],
+input#comment3:checked ~ .comment-slider__dots label[for="comment3"] {
+  background-color: $main_orange;
+}
+
+.comment-slider input[type="radio"] {
+  display: none;
+}
+
+.comment-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.comment-slider__track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  width: 300%;
+}
+
+@include media(tablet) {
+  .info_container {
+    width: 688px;
+    padding: 37px 30px;
+  }
+  .stat__item {
+    flex-direction: column;
+  }
+  .stat__item-icon {
+    order: none;
+    font-size: 34px;
+  }
+  .info_stats {
+    display: flex;
+    align-items: center;
+    gap: 134px;
+    margin-bottom: 46px;
+    justify-content: center;
+  }
+  .info_stats::after {
+    top: -110px;
+    height: 628px;
+  }
+  .stat__item-title {
+    font-size: 24px;
+  }
+  .stat__item-value {
+    font-size: 34px;
+  }
+  .comment__info {
+    width: 448px;
+  }
+  .comment__info-title {
+    font-size: 24px;
+  }
+  .comment__info-text {
+    font-size: 18px;
+  }
+  .comment__image {
+    width: 100px;
+    height: 100px;
+  }
+}
+@include media(desktop) {
+  .info_container {
+    width: 1144px;
+    padding: 31px 38px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .stat__item {
+    flex-direction: column;
+  }
+  .stat__item-icon {
+    order: none;
+    font-size: 34px;
+  }
+  .info_stats {
+    display: flex;
+    align-items: center;
+    gap: 78px;
+    margin-bottom: 0;
+    margin-right: 130px;
+  }
+  .info_stats::after {
+    height: 130px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    rotate: 0deg;
+  }
+  .stat__item-title {
+    font-size: 24px;
+  }
+  .stat__item-value {
+    font-size: 34px;
+  }
+  .comment__info {
+    width: 298px;
+  }
+  .comment__image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .comment__info-titel {
+    font-size: 24px;
+  }
+  .comment {
+    gap: 35px;
+  }
+}

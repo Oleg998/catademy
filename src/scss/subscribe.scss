@@ -1,0 +1,137 @@
+@use "common/vars" as *;
+@use "common/mixins" as *;
+#subscribe {
+    padding-bottom: 30px;
+}
+.subscribe__conteiner {
+  position: relative;
+  padding: 48px 24px 24px 26px;
+  background: $purple_gradient;
+  border-radius: 25px;
+  width: 312px;
+}
+.subscribe__image{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 206px;
+  width: 251px;
+}
+.subscribe__title {
+  font-size: 24px;
+  width: 222px;
+}
+.subscribe__subtitle::before {
+  content: "Subscribe to get more information about upcoming courses and new videos.";
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  font-family: "Ubuntu", sans-serif;
+}
+.subscribe__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+.subscribe__input {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 262px;
+}
+.subscribe__email {
+  border-radius: 12px;
+  padding: 5px 33px;
+  border: none;
+}
+.subscribe__email::placeholder {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: rgba(81, 51, 166, 0.55);
+}
+.subscribe__button {
+  border: none;
+  background-color: $main_orange;
+  border-radius: 12px;
+  padding: 6px 36px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  color: inherit;
+  transition: background-color 0.3s ease;
+}
+.subscribe__button:focus,
+.subscribe__button:hover{
+    background-color:#ff5d00;;
+}
+@include media(tablet){
+    #subscribe {
+        padding-bottom: 60px;
+    }
+    .subscribe__conteiner {
+        width: 688px;
+        padding: 60px 67px 34px 42px;
+    }
+    .subscribe__title {
+        width: 100%;
+        font-size: 36px;
+    }
+    .subscribe__subtitle::before {
+        content: attr(data-full);
+    }
+    .subscribe__text-container{
+        width: 558px;
+        gap: 11px;
+        margin-bottom: 22px;
+    }
+    .subscribe__input {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        width: 602px;
+      }
+    .subscribe__email{
+        border-top-right-radius:0;
+        border-bottom-right-radius: 0;
+        padding: 11px 33px;
+        width: 450px;
+    }
+    .subscribe__button{
+        border-top-left-radius: 0;  
+        border-bottom-left-radius: 0;
+        width: 152px;
+        padding: 11px 36px;
+    } 
+    .subscribe__image{
+        left: 60%;
+        transform: none;
+        bottom:140px;
+        width: 313px;
+      }
+}
+@include media(desktop){
+    #subscribe {
+        padding-bottom: 106px;
+    }
+    .subscribe__image{
+        left: 70%;
+        transform: none;
+        bottom:-70px;
+        width: 529px;
+      }
+      .subscribe__conteiner {
+        width: 989px;
+        padding: 32px 270px 34px 35px;
+    }
+    .subscribe__title {
+        font-size: 48px;
+    }
+    .subscribe__text-container{
+        margin-bottom: 46px;
+        width: 684px;
+    }
+}
